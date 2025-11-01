@@ -18,6 +18,11 @@ public class MemControl {
         this.memory = memory;
     }
 
+    private void pauseAndClear() {
+        ConsoleManage.pause(in);
+        ConsoleManage.clearScreen();
+    }
+
     // Memory Menu options
     private void printMenu() {
         System.out.println("\n=== Memory Menu ===");
@@ -53,11 +58,13 @@ public class MemControl {
             // Single value operations
             if (choice == 1) {
                 int v = readInt("Enter an integer value: ");
-                memory.storeSingle(v); // <-- store (or replace) single value
+                memory.storeSingle(v); // store (or replace) single value
                 System.out.println("Value stored in memory: " + memory.getSingle());
+                pauseAndClear();
             } else if (choice == 2) {
                 if (memory.hasSingle()) {
                     System.out.println("Value recalled from memory: " + memory.getSingle());
+                    pauseAndClear();
                 } else {
                     System.out.println("No value is currently stored.");
                 }
@@ -65,6 +72,7 @@ public class MemControl {
                 if (memory.hasSingle()) {
                     memory.clearSingle();
                     System.out.println("Single value memory cleared.");
+                    pauseAndClear();
                 } else {
                     System.out.println("No value is currently stored.");
                 }
@@ -72,64 +80,80 @@ public class MemControl {
                 int v = readInt("Enter a new integer value to replace: ");
                 memory.storeSingle(v); // replace = store overwrite
                 System.out.println("Value replaced in memory: " + memory.getSingle());
+                pauseAndClear();
             }
 
             // Collection operations
             else if (choice == 5) {
                 if (memory.isCollectionFull()) {
                     System.out.println("Collection is full. Remove a value before adding a new one.");
+                    pauseAndClear();
                 } else {
                     int v = readInt("Enter an integer value to add to collection: ");
                     memory.addToCollection(v);
                     System.out.println("Value added. Count is now: " + memory.countCollection() + ".");
+                    pauseAndClear();
                 }
             } else if (choice == 6) {
                 int count = memory.countCollection();
                 if (count == 0) {
                     System.out.println("Collection is empty. No values to remove.");
+                    pauseAndClear();
                 } else {
                     System.out.println("Current collection values (1-based index):");
                     printIndexed(memory.getAll());
                     int index = readIntInRange("Enter index to remove (1-" + count + "): ", 1, count);
                     int removed = memory.removeByIndex(index - 1); // convert to 0-based
                     System.out.println("Removed value: " + removed);
+                    pauseAndClear();
                 }
             } else if (choice == 7) {
                 ArrayList<Integer> values = memory.getAll();
                 if (values.isEmpty()) {
                     System.out.println("Collection is empty.");
+                    pauseAndClear();
                 } else {
                     System.out.println("Values in collection:");
                     printIndexed(values);
+                    pauseAndClear();
                 }
             } else if (choice == 8) {
                 System.out.println("Number of values in collection: " + memory.countCollection());
+                pauseAndClear();
             } else if (choice == 9) {
                 if (memory.countCollection() == 0) {
                     System.out.println("Collection is empty. Sum is 0.");
+                    pauseAndClear();
                 } else {
                     System.out.println("Sum of values in collection: " + memory.sum());
+                    pauseAndClear();
                 }
             } else if (choice == 10) {
                 if (memory.countCollection() == 0) {
                     System.out.println("Collection is empty. Average undefined.");
+                    pauseAndClear();
                 } else {
                     double avg = memory.average();
                     System.out.printf("Average of values in collection: %.2f%n", avg);
+                    pauseAndClear();
                 }
             } else if (choice == 11) {
                 if (memory.countCollection() < 2) {
                     System.out.println("Collection must have at least two values to compute difference.");
+                    pauseAndClear();
                 } else {
                     int diff = memory.diffFirstLast(); // first - last
                     System.out.println("Difference between first and last value: " + diff);
+                    pauseAndClear();
                 }
             } else if (choice == 12) {
                 if (memory.countCollection() == 0) {
                     System.out.println("Collection is already empty.");
+                    pauseAndClear();
                 } else {
                     memory.clearCollection();
                     System.out.println("Collection cleared.");
+                    pauseAndClear();
                 }
             }
 

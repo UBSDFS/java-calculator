@@ -13,7 +13,10 @@ public class Calculator {
     // Main method to run the calculator application
     public static void main(String[] args) {
         // Welcome message
+        System.out.println("-------------------------------------");
         System.out.println("Welcome to Ulysses's Calculator!");
+        System.out.println("Week 4 Exception Handling");
+        System.out.println();
         // Using try-with-resources to ensure Scanner is closed properly
         try (Scanner in = new Scanner(System.in)) {
             // Instantiate CalculatorEngine and MenuControl
@@ -26,3 +29,8 @@ public class Calculator {
         }
     }
 }
+
+// Create exception handling for invalid inputs and all classes with following
+// on message
+// and prompt user to re-enter value
+// "Invalid input. Please enter a valid number."
