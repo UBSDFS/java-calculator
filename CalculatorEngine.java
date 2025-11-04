@@ -1,10 +1,3 @@
-/*  
-CalculatorEngine.java
- * Name: Ulysses Burden III
- * Assignment: Lab - Project Software Control Design-Calculator Application
- * Date: Oct 25, 2025
- */
-
 // CalculatorEngine class to perform basic arithmetic operations
 public class CalculatorEngine {
     public double add(double a, double b) {

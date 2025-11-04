@@ -1,11 +1,5 @@
 
-/*
- * MenuControl.java
- * Name: Ulysses Burden III
- * Assignment: Lab - Software Control Design-Calculator Application
- * Exception Handling Addition
- * Date: November 1, 2025
- */
+//Menu Control class to handle user interactions and menu navigation
 import java.util.Scanner;
 
 public class MenuControl {
@@ -112,10 +106,10 @@ public class MenuControl {
 
             }
         }
-        double result = 0;
+        double result;
         // Perform the operation based on user choice
         if (operation.equals("add")) {
-            result = engine.add(num1, num2);
+                        result = engine.add(num1, num2);
             System.out.printf("The result of adding %.2f and %.2f is: %.2f%n", num1, num2, result);
             in.nextLine();
             pauseAndClear();
@@ -146,6 +140,7 @@ public class MenuControl {
             }
             result = engine.divide(num1, num2);
             System.out.printf("The result of dividing %.2f by %.2f is: %.2f%n", num1, num2, result);
+            in.nextLine();
             pauseAndClear();
         } else {
 

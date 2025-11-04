@@ -1,9 +1,4 @@
-/*
-* Calculator.java
- * Name: Ulysses Burden III
- * Assignment: Week2 Lab - Software Control Design-Calculator Application
- * Date: Oct 25, 2025
- */
+// Calculator application main class
 
 // Import necessary libraries
 import java.util.Scanner;
@@ -14,8 +9,9 @@ public class Calculator {
     public static void main(String[] args) {
         // Welcome message
         System.out.println("-------------------------------------");
-        System.out.println("Welcome to Ulysses's Calculator!");
-        System.out.println("Week 4 Exception Handling");
+        System.out.println("Welcome to the Java Calculator!");
+        System.out.println();
+        System.out.println("Developed by Ulysses Burden III");
         System.out.println();
         // Using try-with-resources to ensure Scanner is closed properly
         try (Scanner in = new Scanner(System.in)) {
@@ -30,7 +26,3 @@ public class Calculator {
     }
 }
 
-// Create exception handling for invalid inputs and all classes with following
-// on message
-// and prompt user to re-enter value
-// "Invalid input. Please enter a valid number."

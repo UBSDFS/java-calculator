@@ -1,9 +1,4 @@
-/*  
-CalculatorEngine.java
- * Name: Ulysses Burden III
- * Assignment: Lab - Project Software Control Design-Calculator Application
- * Date: Oct 28, 2025
- */
+//ConsoleManage class to handle console operations and clearing the screen
 
 public class ConsoleManage {
     private ConsoleManage() {

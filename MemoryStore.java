@@ -1,8 +1,4 @@
-/*
- * Name: Ulysses Burden III
- * Assignment: Lab - Arrays and Lists - Calculator Application
- * Date: Oct 25, 2025
- */
+//MemoryStore class to handle memory storage
 
 import java.util.ArrayList;
 
